@@ -37,6 +37,6 @@ public class FOVSystem : MonoBehaviour
     {
         if (distanceMode == false){return;};
         float distance = Vector3.Distance(player1.gameObject.transform.position, player2.gameObject.transform.position);
-        setFOV(distance * 2, 2, true);
+        setFOV(Mathf.Clamp(distance * 2, 5, 10), 2, true);
     }
 }
